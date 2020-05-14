@@ -1,7 +1,7 @@
 let n = 1;
 getPage.onclick = () => {
   const request = new XMLHttpRequest();
-  request.open("GET", `/ajax/public/page${n+1}`);
+  request.open("GET", `/public/page${n+1}`);
   request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 200) {
       const array = JSON.parse(request.response);
@@ -19,7 +19,7 @@ getPage.onclick = () => {
 getJSON.onclick=()=>{
  
   const request=new XMLHttpRequest();
-  request.open("GET",'/ajax/public/5.json');
+  request.open("GET",'/public/5.json');
   request.onreadystatechange=()=>{
       if(request.readyState===4 && request.status ===200){
          console.log(request.response);
@@ -39,7 +39,7 @@ getXML.onclick = () => {
     console.log('lal');
     
     const request = new XMLHttpRequest();
-    request.open("GET", "/ajax/public/4.xml");
+    request.open("GET", "/public/4.xml");
     request.onreadystatechange = () => {
       if (request.readyState === 4 && request.status === 200) {
         const dom = request.responseXML;
@@ -52,7 +52,7 @@ getXML.onclick = () => {
 // 添加html到页面中
 getHTML.onclick=()=>{
     const request=new XMLHttpRequest()
-    request.open('GET','/ajax/public/3.html')
+    request.open('GET','/public/3.html')
     request.onload=()=>{
         // 创建html
         const html=document.createElement('html')
@@ -69,7 +69,7 @@ getHTML.onclick=()=>{
 // 添加js到页面中
 getJS.onclick=()=>{
     const request=new XMLHttpRequest()
-    request.open('GET','/ajax/public/2.js')
+    request.open('GET','/public/2.js')
     request.onload=()=>{
     
 //    创建script标签
@@ -89,7 +89,7 @@ getCSS.onclick=()=>{
     // 1 创建XMLHttpRequest
     const request=new XMLHttpRequest()
     // 2.调用对象的open方法
-    request.open('GET','/ajax/public/style.css');
+    request.open('GET','/public/style.css');
     // 3.监听对象的onload&onerror事件
     request.onreadystatechange=()=>{
         console.log(request.readyState);
