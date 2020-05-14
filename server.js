@@ -21,56 +21,56 @@ var server = http.createServer(function(request, response){
 
   console.log('有个傻子发请求过来啦！路径（带查询参数）为：' + pathWithQuery)
 
-  if(path === '/index.html'){
+  if(path === 'https://poly2122.github.io/ajax/public/index.html'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-     let string= fs.readFileSync('public/index.html').toString()
-     const page1=fs.readFileSync('db/page1.json').toString()
+     let string= fs.readFileSync('https://poly2122.github.io/ajax/public/index.html').toString()
+     const page1=fs.readFileSync('https://poly2122.github.io/ajax/db/page1.json').toString()
      const array=JSON.parse(page1)
      const result= array.map(item=>`<li>${item.id}</li>` ).join('')
      string= string.replace('{{page1}}',`<ul id="xxx">${result}</ul>`)
      response.write(string)
     response.end()
-  } else if(path === '/main.js'){
+  } else if(path === 'https://poly2122.github.io/ajax/public/main.js'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/javascript;charset=utf-8')
-    response.write(fs.readFileSync('public/main.js'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/public/main.js'))
     response.end()
-  } else if(path==='/style.css'){
+  } else if(path==='https://poly2122.github.io/ajax/public/style.css'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/css;charset=utf-8')
-    response.write(fs.readFileSync('public/style.css'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/public/style.css'))
     response.end()
-  }else if(path==='/2.js'){
+  }else if(path==='https://poly2122.github.io/ajax/public/2.js'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/javascript;charset=utf-8')
-    response.write(fs.readFileSync('public/2.js'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/public/2.js'))
     response.end()
   }
-  else if(path==='/3.html'){
+  else if(path==='https://poly2122.github.io/ajax/public/3.html'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(fs.readFileSync('public/3.html'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/public/3.html'))
     response.end()
-  }else if(path==='/4.xml'){
+  }else if(path==='https://poly2122.github.io/ajax/public/4.xml'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/xml;charset=utf-8')
-    response.write(fs.readFileSync('public/4.xml'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/public/4.xml'))
     response.end()
-  }else if(path==='/5.json'){
+  }else if(path==='https://poly2122.github.io/ajax/public/5.json'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'application/json;charset=utf-8')
-    response.write(fs.readFileSync('public/5.json'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/public/5.json'))
     response.end()
-  }else if(path==='/page2'){
+  }else if(path==='https://poly2122.github.io/ajax/db/page2'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/json;charset=utf-8')
-    response.write(fs.readFileSync('db/page2.json'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/db/page2.json'))
     response.end()
-  }else if(path==='/page3'){
+  }else if(path==='https://poly2122.github.io/ajax/db/page3'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/json;charset=utf-8')
-    response.write(fs.readFileSync('db/page3.json'))
+    response.write(fs.readFileSync('https://poly2122.github.io/ajax/db/page3.json'))
     response.end()
   } else{
     response.statusCode = 404
