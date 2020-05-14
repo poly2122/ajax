@@ -1,7 +1,7 @@
 let n = 1;
 getPage.onclick = () => {
   const request = new XMLHttpRequest();
-  request.open("GET", `https://poly2122.github.io/ajax/db/page${n+1}`);
+  request.open("GET", `https://poly2122.github.io/ajax/db/page${n+1}.json`);
   request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 200) {
       const array = JSON.parse(request.response);
